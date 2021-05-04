@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a href="" class="navbar-brand">Formation Angular</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNavbar">
+        <span class="navbar-toggler-icon">
+        </span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapseNavbar">
+        <ul class="nav navbar-nav">
+            <li><a class="nav-link item" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a></li>
+            <li><a class="nav-link item" routerLink="stagiaire" routerLinkActive="active">Stagiaire</a></li>
+            <li><a class="nav-link item" routerLink="adresse" routerLinkActive="active">Adresse</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
