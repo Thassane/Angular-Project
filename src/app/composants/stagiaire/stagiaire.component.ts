@@ -62,11 +62,11 @@ export class StagiaireComponent implements OnInit {
 
     // Solution avec les observables
 
-    this.route.queryParamMap.subscribe(res => {
-      this.nom = res.get('nom');
-      this.prenom = res.get('prenom');
-      console.log(this.nom + " " + this.prenom);
-    });
+    // this.route.queryParamMap.subscribe(res => {
+    //   this.nom = res.get('nom');
+    //   this.prenom = res.get('prenom');
+    //   console.log(this.nom + " " + this.prenom);
+    // });
 
   }
 

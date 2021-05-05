@@ -7,6 +7,10 @@ import { HomeComponent } from './composants/home/home.component';
 import { AdresseComponent } from './composants/adresse/adresse.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
 import { ErrorComponent } from './composants/error/error.component';
+import { TemplateFormComponent } from './composants/formulaires/template-form/template-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CalculetteComponent } from './composants/formulaires/calculette/calculette.component';
+import { ReactiveFormComponent } from './composants/formulaires/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,16 @@ import { ErrorComponent } from './composants/error/error.component';
     HomeComponent,
     AdresseComponent,
     StagiaireComponent,
-    ErrorComponent
+    ErrorComponent,
+    TemplateFormComponent,
+    CalculetteComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
