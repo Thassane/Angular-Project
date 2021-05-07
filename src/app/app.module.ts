@@ -16,6 +16,8 @@ import { TpFormComponent } from './composants/formulaires/tp-form/tp-form.compon
 import { PersonneComponent } from './composants/personne/personne/personne.component';
 import { PersonneDetailsComponent } from './composants/personne/personne-details/personne-details.component';
 import { PersonneEditComponent } from './composants/personne/personne-edit/personne-edit.component';
+import { RocketComponent } from './composants/rockets/rocket/rocket.component';
+import { RocketEditComponent } from './composants/rockets/rocket-edit/rocket-edit.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { PersonneEditComponent } from './composants/personne/personne-edit/perso
     TpFormComponent,
     PersonneComponent,
     PersonneDetailsComponent,
-    PersonneEditComponent
+    PersonneEditComponent,
+    RocketComponent,
+    RocketEditComponent
   ],
   imports: [
     BrowserModule,

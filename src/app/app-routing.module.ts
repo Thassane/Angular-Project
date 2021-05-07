@@ -10,6 +10,8 @@ import { HomeComponent } from './composants/home/home.component';
 import { PersonneDetailsComponent } from './composants/personne/personne-details/personne-details.component';
 import { PersonneEditComponent } from './composants/personne/personne-edit/personne-edit.component';
 import { PersonneComponent } from './composants/personne/personne/personne.component';
+import { RocketEditComponent } from './composants/rockets/rocket-edit/rocket-edit.component';
+import { RocketComponent } from './composants/rockets/rocket/rocket.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
 import { PersonDetailsResolver } from './resolvers/person-details.resolver';
 import { PersonResolver } from './resolvers/person.resolver';
@@ -41,6 +43,10 @@ const routes: Routes = [
     personne : PersonDetailsResolver}  },
   // localhost:4200/edit/:id
   { path: 'edit/:id', component: PersonneEditComponent },
+  // localhost:4200/rocket
+  { path: 'rocket', component: RocketComponent },
+  // localhost:4200/rocket/:id
+  { path: 'edit-rocket/:id', component: RocketEditComponent },
   // localhost:4200/error
   { path: 'error', component: ErrorComponent },
   // pathMatch = "full" signifie que tout chemin d url doit correspondre

@@ -20,21 +20,20 @@ export class PersonneComponent implements OnInit {
     this.reloadResolve();
   }
 
-  // reloadData(){
-  //   // this.personneService.getAllPersons().subscribe(data => {
-  //   //   this.personnes = data;
-  //   // });
+  reloadData(){
+    // this.personneService.getAllPersons().subscribe(data => {
+    //   this.personnes = data;
+    // });
 
-  //   // Utilisation du resolver PersonResolver
-  //   // this.route.data.subscribe(data => {
-  //   //   console.log('Check route resolver data');
-  //   //   console.log(data);
-  //   //   this.personnes = data.routeResolver;
-  //   // })
+    // Utilisation du resolver PersonResolver
+    // this.route.data.subscribe(data => {
+    //   console.log('Check route resolver data');
+    //   console.log(data);
+    //   this.personnes = data.routeResolver;
+    // })
 
-  //   this.personnes = this.route.snapshot.data.routeResolver;
-   
-  // }
+    this.personnes = this.route.snapshot.data.routeResolver;
+  }
 
   // Enregistre un nouvel objet personne par l'appel de la methode addPerson initiliasée 
   // dans le service personne.service -> appel du chemin et de la methode POST
@@ -49,7 +48,7 @@ export class PersonneComponent implements OnInit {
   reloadResolve() {
     this.router.navigated = false;
     this.router.navigate([this.router.url]).then(() => {
-      this.personnes = this.route.snapshot.data.routeResolver;
+      this.personnes = this.route.snapshot.data.routeResolver;   
     });
   }
 
