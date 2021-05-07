@@ -11,6 +11,8 @@ import { PersonneDetailsComponent } from './composants/personne/personne-details
 import { PersonneEditComponent } from './composants/personne/personne-edit/personne-edit.component';
 import { PersonneComponent } from './composants/personne/personne/personne.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
+import { PersonDetailsResolver } from './resolvers/person-details.resolver';
+import { PersonResolver } from './resolvers/person.resolver';
 
 const routes: Routes = [
   // localhost:4200/
@@ -32,9 +34,11 @@ const routes: Routes = [
   // localhost:4200/tp-form
   { path: 'tp-form', component: TpFormComponent },
   // localhost:4200/personne
-  { path: 'personne', component: PersonneComponent },
+  // On associe un resolver a la route /personne
+  { path: 'personne', runGuardsAndResolvers: 'always', component: PersonneComponent, resolve: { routeResolver: PersonResolver } },
   // localhost:4200/details/:id
-  { path: 'details/:id', component: PersonneDetailsComponent },
+  { path: 'details/:id', component: PersonneDetailsComponent ,  resolve:{ 
+    personne : PersonDetailsResolver}  },
   // localhost:4200/edit/:id
   { path: 'edit/:id', component: PersonneEditComponent },
   // localhost:4200/error
@@ -43,13 +47,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   // On affichera error.component en cas de chemin inexistant
   { path: '**', redirectTo: '/error' },
-
 ];
 
 //  enableTracing: true permet de garder une trace de la recherche d’un chemin (pour
 //  le debogage).
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
+  exports: [RouterModule],
+  })
 export class AppRoutingModule { }

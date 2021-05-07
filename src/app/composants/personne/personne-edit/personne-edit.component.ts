@@ -24,6 +24,8 @@ export class PersonneEditComponent implements OnInit {
     })
   }
 
+  // Met a jour un objet personne selon son identifiant par l'appel de la methode updatePerson initiliasée 
+  // dans le service personne.service -> appel du chemin et de la methode POST
   editPerson() {
     this.personneService.updatePerson(this.id, this.personne).subscribe(data => {
       console.log("Edit person :" + data);
