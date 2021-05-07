@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,10 @@ import { TemplateFormComponent } from './composants/formulaires/template-form/te
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalculetteComponent } from './composants/formulaires/calculette/calculette.component';
 import { ReactiveFormComponent } from './composants/formulaires/reactive-form/reactive-form.component';
+import { TpFormComponent } from './composants/formulaires/tp-form/tp-form.component';
+import { PersonneComponent } from './composants/personne/personne/personne.component';
+import { PersonneDetailsComponent } from './composants/personne/personne-details/personne-details.component';
+import { PersonneEditComponent } from './composants/personne/personne-edit/personne-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +26,18 @@ import { ReactiveFormComponent } from './composants/formulaires/reactive-form/re
     ErrorComponent,
     TemplateFormComponent,
     CalculetteComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    TpFormComponent,
+    PersonneComponent,
+    PersonneDetailsComponent,
+    PersonneEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

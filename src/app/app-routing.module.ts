@@ -5,7 +5,11 @@ import { ErrorComponent } from './composants/error/error.component';
 import { CalculetteComponent } from './composants/formulaires/calculette/calculette.component';
 import { ReactiveFormComponent } from './composants/formulaires/reactive-form/reactive-form.component';
 import { TemplateFormComponent } from './composants/formulaires/template-form/template-form.component';
+import { TpFormComponent } from './composants/formulaires/tp-form/tp-form.component';
 import { HomeComponent } from './composants/home/home.component';
+import { PersonneDetailsComponent } from './composants/personne/personne-details/personne-details.component';
+import { PersonneEditComponent } from './composants/personne/personne-edit/personne-edit.component';
+import { PersonneComponent } from './composants/personne/personne/personne.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
 
 const routes: Routes = [
@@ -25,6 +29,14 @@ const routes: Routes = [
   { path: 'adresse/:ville/:codePostal', component: AdresseComponent },
   // localhost:4200/calculette
   { path: 'calculette', component: CalculetteComponent },
+  // localhost:4200/tp-form
+  { path: 'tp-form', component: TpFormComponent },
+  // localhost:4200/personne
+  { path: 'personne', component: PersonneComponent },
+  // localhost:4200/details/:id
+  { path: 'details/:id', component: PersonneDetailsComponent },
+  // localhost:4200/edit/:id
+  { path: 'edit/:id', component: PersonneEditComponent },
   // localhost:4200/error
   { path: 'error', component: ErrorComponent },
   // pathMatch = "full" signifie que tout chemin d url doit correspondre
