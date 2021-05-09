@@ -1,3 +1,4 @@
+import { Personne } from 'src/app/interfaces/personne';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdresseComponent } from './composants/adresse/adresse.component';
@@ -9,8 +10,12 @@ import { TpFormComponent } from './composants/formulaires/tp-form/tp-form.compon
 import { HomeComponent } from './composants/home/home.component';
 import { PersonneDetailsComponent } from './composants/personne/personne-details/personne-details.component';
 import { PersonneEditComponent } from './composants/personne/personne-edit/personne-edit.component';
+import { RocketEditComponent } from './composants/rocket/rocket-edit/rocket-edit.component';
+import { RocketComponent } from './composants/rocket/rocket/rocket.component';
 import { PersonneComponent } from './composants/personne/personne/personne.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
+import { PersonResolver } from './resolvers/person.resolver';
+import { PersonDetailsResolver } from './resolvers/person-details.resolver';
 
 const routes: Routes = [
   // localhost:4200/
@@ -32,11 +37,15 @@ const routes: Routes = [
   // localhost:4200/tp-form
   { path: 'tp-form', component: TpFormComponent },
   // localhost:4200/personne
-  { path: 'personne', component: PersonneComponent },
+  { path: 'personne', component: PersonneComponent, resolve: {routeResolver: PersonResolver} },
   // localhost:4200/details/:id
-  { path: 'details/:id', component: PersonneDetailsComponent },
+  { path: 'details/:id', component: PersonneDetailsComponent, resolve:{ personne : PersonDetailsResolver} },
   // localhost:4200/edit/:id
   { path: 'edit/:id', component: PersonneEditComponent },
+  // localhost:4200/rocket
+  { path: 'rocket', component: RocketComponent },
+  // localhost:4200/rocket/:id
+  { path: 'edit-rocket/:id', component: RocketEditComponent },
   // localhost:4200/error
   { path: 'error', component: ErrorComponent },
   // pathMatch = "full" signifie que tout chemin d url doit correspondre
@@ -49,7 +58,7 @@ const routes: Routes = [
 //  enableTracing: true permet de garder une trace de la recherche d’un chemin (pour
 //  le debogage).
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
