@@ -2,7 +2,7 @@
 <hr />
 <div *ngIf="personne">
     <div>
-        <label><b>Id :</b> {{ id }}</label>
+        <label><b>Id :</b> {{ personne.id }}</label>
     </div>
     <div>
         <label><b>Nom :</b> {{ personne.nom }}</label>
@@ -16,4 +16,7 @@
     <div>
         <label><b>Ville :</b> {{ personne.ville }}</label>
     </div>
+    <button (click)="backToPersonList()">
+        Retour
+    </button>
 </div>

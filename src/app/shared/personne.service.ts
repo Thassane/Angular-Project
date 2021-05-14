@@ -41,9 +41,8 @@ export class PersonneService {
   // Dans l'exemple, il appellera errorMgmt et à l'intérieur de cela, 
   // il enregistrera simplement cette chaîne.
 
-
    // Recupère la liste de personnes
-   getAllPersons(){
+   getAllPersons(): Observable<Personne[]>{
     let API_URL = `${this.url}/show`;
     
     return this.http.get(API_URL, { headers: this.headers })
@@ -55,7 +54,8 @@ export class PersonneService {
       )
    }
 
-   addPerson(data: Personne){
+   // Ajoute une personne
+   addPerson(data: Personne): Observable<Personne>{
     let API_URL = `${this.url}/save`;
     return this.http.post(API_URL, data)
       .pipe(
@@ -63,7 +63,8 @@ export class PersonneService {
       )
    }
 
-   getPerson(id :number){
+   // recupere une personne selon son identifiant
+   getPerson(id :number): Observable<any>{
     let API_URL = `${this.url}/getOne/${id}`;
     return this.http.get(API_URL, { headers: this.headers })
     .pipe(
@@ -75,7 +76,8 @@ export class PersonneService {
     // return this.http.get(`${this.url}/getOne/${id}`);
    }
 
-   updatePerson(id: number, data: Personne){
+   // Met à jour une personne selon son identifiant
+   updatePerson(id: number, data: Personne): Observable<any>{
     let API_URL = `${this.url}/update/${id}`;
     return this.http.put(API_URL, data)
       .pipe(
@@ -86,15 +88,15 @@ export class PersonneService {
       );
   }
 
-  // Delete student
-  deletePerson(id: number) {
+  // Supprime une personne selon son identifiant
+  deletePerson(id: number): Observable<any> {
     var API_URL = `${this.url}/delete/${id}`;
     return this.http.delete(API_URL)
       .pipe(
         catchError(this.errorMgmt)
       )
   }
-
+   // Gère les erreurs par rapport au coté serveur
    errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

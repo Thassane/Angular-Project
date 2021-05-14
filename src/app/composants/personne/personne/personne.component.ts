@@ -35,7 +35,11 @@ export class PersonneComponent implements OnInit {
     this.personnes = this.route.snapshot.data.routeResolver;
   }
 
+<<<<<<< HEAD
   // Enregistre un nouvel objet personne par l'appel de la methode addPerson initiliasée
+=======
+  // Enregistre un nouvel objet personne par l'appel de la methode addPerson initiliasée 
+>>>>>>> 82ca067bbd204e59e82a0e8c2729c4aa148416f9
   // dans le service personne.service -> appel du chemin et de la methode POST
   savePerson(){
     this.personneService.addPerson(this.personne).subscribe(data => {
@@ -48,7 +52,11 @@ export class PersonneComponent implements OnInit {
   reloadResolve() {
     this.router.navigated = false;
     this.router.navigate([this.router.url]).then(() => {
+<<<<<<< HEAD
       this.personnes = this.route.snapshot.data.routeResolver;
+=======
+      this.personnes = this.route.snapshot.data.routeResolver;   
+>>>>>>> 82ca067bbd204e59e82a0e8c2729c4aa148416f9
     });
   }
 
@@ -62,7 +70,11 @@ export class PersonneComponent implements OnInit {
     this.router.navigate(['edit', id]);
   }
 
+<<<<<<< HEAD
   // Supprime unobjet personne selon un identifiant par l'appel de la methode deletePerson initiliasée
+=======
+  // Supprime unobjet personne selon un identifiant par l'appel de la methode deletePerson initiliasée 
+>>>>>>> 82ca067bbd204e59e82a0e8c2729c4aa148416f9
   // dans le service personne.service -> appel du chemin et de la methode DELETE
   deletePerson(id: any) {
       this.personneService.deletePerson(id).subscribe(data => {
