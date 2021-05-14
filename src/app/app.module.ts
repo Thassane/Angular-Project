@@ -16,13 +16,8 @@ import { TpFormComponent } from './composants/formulaires/tp-form/tp-form.compon
 import { PersonneComponent } from './composants/personne/personne/personne.component';
 import { PersonneDetailsComponent } from './composants/personne/personne-details/personne-details.component';
 import { PersonneEditComponent } from './composants/personne/personne-edit/personne-edit.component';
-<<<<<<< HEAD
 import { RocketComponent } from './composants/rocket/rocket/rocket.component';
 import { RocketEditComponent } from './composants/rocket/rocket-edit/rocket-edit.component';
-=======
-import { RocketComponent } from './composants/rockets/rocket/rocket.component';
-import { RocketEditComponent } from './composants/rockets/rocket-edit/rocket-edit.component';
->>>>>>> 82ca067bbd204e59e82a0e8c2729c4aa148416f9
 
 @NgModule({
   declarations: [

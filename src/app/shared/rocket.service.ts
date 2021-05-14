@@ -9,11 +9,7 @@ import { Rocket } from '../interfaces/rocket';
 })
 export class RocketService {
 
-<<<<<<< HEAD
   url: string = 'http://localhost:4200/rocket';
-=======
-  url: string = 'http://localhost:8080/api/rockets';
->>>>>>> 82ca067bbd204e59e82a0e8c2729c4aa148416f9
 
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   rockets: Array<Rocket> = new Array<Rocket>();
@@ -22,11 +18,7 @@ export class RocketService {
 
   getAllRockets(): Observable<Rocket[]>{
     let API_URL = `${this.url}`;
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 82ca067bbd204e59e82a0e8c2729c4aa148416f9
     return this.http.get(API_URL, { headers: this.headers })
       .pipe(
         map((res: any) => {
@@ -38,11 +30,7 @@ export class RocketService {
 
    getRocketsByOrga(organisation: any): Observable<Rocket[]>{
     let API_URL = `${this.url}/search?organisation=${organisation}`;
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 82ca067bbd204e59e82a0e8c2729c4aa148416f9
     return this.http.get(API_URL, { headers: this.headers })
       .pipe(
         map((res: any) => {
@@ -113,9 +101,5 @@ export class RocketService {
     return throwError(errorMessage);
   }
 
-<<<<<<< HEAD
 
-=======
-   
->>>>>>> 82ca067bbd204e59e82a0e8c2729c4aa148416f9
 }
