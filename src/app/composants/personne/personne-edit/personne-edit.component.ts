@@ -13,7 +13,7 @@ export class PersonneEditComponent implements OnInit {
   id!: number;
   personne: Personne = {};
 
-  constructor(private personneService: PersonneService, private router: Router, 
+  constructor(private personneService: PersonneService, private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class PersonneEditComponent implements OnInit {
     })
   }
 
-  // Met a jour un objet personne selon son identifiant par l'appel de la methode updatePerson initiliasée 
+  // Met a jour un objet personne selon son identifiant par l'appel de la methode updatePerson initiliasée
   // dans le service personne.service -> appel du chemin et de la methode POST
   editPerson() {
     this.personneService.updatePerson(this.id, this.personne).subscribe(data => {

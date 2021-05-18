@@ -17,6 +17,10 @@ export class PersonneDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.personne = this.Router.snapshot.data['personne'];
+
+    // Ou
+
+    // this.personne = this.router.snapshot.data.personne;
    // this.personneService.getPerson(this.id).subscribe(data =>{
      // console.log(data);
       //this.personne = data[0];

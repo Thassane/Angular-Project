@@ -9,7 +9,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 })
 export class ReactiveFormComponent implements OnInit {
 
-  // Le décorateur ViewChild permet d'accéder aux éléments DOM natifs 
+  // Le décorateur ViewChild permet d'accéder aux éléments DOM natifs
   // qui ont une variable de référence de modèle, ici el (declare ds le .html)
   @ViewChild('el') span!:ElementRef;
 
@@ -35,7 +35,7 @@ export class ReactiveFormComponent implements OnInit {
   //   // premiere lettre soit en majuscule est que le nombre de caractere soit entre 3 et 11
   //   nom: new FormControl('', [Validators.required, this.checkValidatorNom]),
   //   // Le champ prenom est aussi obligatoire et doit respecter une fonction (qu’on a preparee
-  //   // pour ca) appelee checkValidatorNom qui exige que la premiere lettre soit en majuscule 
+  //   // pour ca) appelee checkValidatorNom qui exige que la premiere lettre soit en majuscule
   //   prenom: new FormControl('', [Validators.required, this.checkValidatorPrenom]),
 
   //   // Il est possible d’imbriquer les FormGroup
@@ -95,29 +95,11 @@ export class ReactiveFormComponent implements OnInit {
     return this.personneForm.get('adresse') as FormGroup;
   }
 
-  get sports2(){
-    return this.personneForm.get('sports2') as FormArray;
-  }
   // On ajoute a notre tableau un nouvel element vide pour que
   // l’utilisateur puisse saisir un nouveau sport.
   // Le sport ajoute par l’utilisateur est lie directement a notre FormArray
   ajouterSport(){
-    this.sports.push(this.fb.group({
-      libelle: [''],
-      // nested form array, you could also add a form group initially
-      sports2: this.fb.array([])
-    }));
-  }
-
-  addNewSport() {
-    this.sports2.push(
-      this.fb.group({
-        libelle: ['']
-    }))
-  }
-
-  deleteProject(i: number) {
-    this.sports2.removeAt(i);
+    this.sports.push(this.fb.control(''));
   }
 
   // Supprime un sport selon son son idex ds le tableau
@@ -148,7 +130,7 @@ export class ReactiveFormComponent implements OnInit {
 
   afficherTout() {
     this.personnes.push({ ...this.personneForm.value });
-    // Hide Sport section 
+    // Hide Sport section
     //this.span.nativeElement.setAttribute("hidden", true);
     //ou
     this.sports.clear();

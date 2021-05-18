@@ -9,7 +9,7 @@ import { Rocket } from '../interfaces/rocket';
 })
 export class RocketService {
 
-  url: string = 'http://localhost:4200/rocket';
+  url: string = 'http://localhost:8080/api/rockets';
 
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   rockets: Array<Rocket> = new Array<Rocket>();

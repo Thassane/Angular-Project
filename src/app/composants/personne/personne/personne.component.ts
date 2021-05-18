@@ -36,6 +36,8 @@ export class PersonneComponent implements OnInit {
   }
 
   // Enregistre un nouvel objet personne par l'appel de la methode addPerson initiliasée
+
+  // Enregistre un nouvel objet personne par l'appel de la methode addPerson initiliasée
   // dans le service personne.service -> appel du chemin et de la methode POST
   savePerson(){
     this.personneService.addPerson(this.personne).subscribe(data => {
@@ -49,6 +51,8 @@ export class PersonneComponent implements OnInit {
     this.router.navigated = false;
     this.router.navigate([this.router.url]).then(() => {
       this.personnes = this.route.snapshot.data.routeResolver;
+      this.personnes = this.route.snapshot.data.routeResolver;
+
     });
   }
 
@@ -62,6 +66,7 @@ export class PersonneComponent implements OnInit {
     this.router.navigate(['edit', id]);
   }
 
+  // Supprime unobjet personne selon un identifiant par l'appel de la methode deletePerson initiliasée
   // Supprime unobjet personne selon un identifiant par l'appel de la methode deletePerson initiliasée
   // dans le service personne.service -> appel du chemin et de la methode DELETE
   deletePerson(id: any) {
